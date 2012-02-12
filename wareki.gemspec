@@ -4,9 +4,12 @@ require File.expand_path('../lib/wareki/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["ice"]
   gem.email         = ["meltedise@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "Wareki - Japanese Calendar Date extention"
+  gem.summary       = "wareki--#{s.version}"
   gem.homepage      = ""
+  s.license         = "MIT"
+
+  s.rubyforge_project = "wareki"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
