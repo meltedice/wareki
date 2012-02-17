@@ -27,6 +27,9 @@ module Wareki
       when 'k', 'keio'
         require 'wareki/date/keio'
         bom = Keio.era_table[year][month]
+      when 'g', 'genji'
+        require 'wareki/date/genji'
+        bom = Genji.era_table[year][month]
       else
         raise 'Unknown era'
       end
