@@ -27,6 +27,18 @@ describe Date do
 
       Wareki::Date.parse("m01.01.01").should be_date("1868-01-25")
       Wareki::Date.parse("m01.01.02").should be_date("1868-01-26")
+
+      Wareki::Date.parse("m01.01.03").should be_date("1868-01-27")
+      Wareki::Date.parse("m01.01.04").should be_date("1868-01-28")
+      Wareki::Date.parse("m01.01.05").should be_date("1868-01-29")
+      Wareki::Date.parse("m01.01.06").should be_date("1868-01-30")
+      Wareki::Date.parse("m01.01.07").should be_date("1868-01-31")
+      Wareki::Date.parse("m01.01.08").should be_date("1868-02-01")
+      Wareki::Date.parse("m01.01.09").should be_date("1868-02-02")
+      Wareki::Date.parse("m01.01.10").should be_date("1868-02-03")
+      Wareki::Date.parse("m01.01.20").should be_date("1868-02-13")
+      Wareki::Date.parse("m01.01.29").should be_date("1868-02-22")
+      Wareki::Date.parse("m01.02.01").should be_date("1868-02-23")
       Wareki::Date.parse("m02.07.07").should be_date("1869-08-14")
       Wareki::Date.parse("m02.04.09").should be_date("1869-05-20") # 明治2年4月9日（1869年5月20日）
       Wareki::Date.parse("m04.07.14").should be_date("1871-08-29") # 明治4年7月14日（1871年8月29日）
