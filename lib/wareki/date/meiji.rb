@@ -2,6 +2,8 @@
 
 module Wareki::Date
   module Meiji
+    include Era
+
     # http://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB
     # 明治元年（戊辰）      一月     二月     三月     四月     閏四月   五月     六月     七月     八月     九月     十月       十一月     十二月
     # グレゴリオ暦     1868/1/25     2/23     3/24     4/23     5/22     6/20     7/20     8/18     9/16     10/16    11/14      12/14      1869/1/13
@@ -86,16 +88,5 @@ module Wareki::Date
              {:era => :meiji, :e_y => 5, :e_m => 11, :g_y => 1872, :g_m => 12, :g_d =>  1},
              {:era => :meiji, :e_y => 5, :e_m => 12, :g_y => 1872, :g_m => 12, :g_d => 30},
             ]
-    def self.era_table
-      return @@era_table if defined?(@@era_table)
-      @@era_table = {}
-      TABLE.each do |era_record|
-        e_y = era_record[:e_y]
-        e_m = era_record[:leap_month] ? "#{era_record[:e_m]}*" : era_record[:e_m]
-        @@era_table[e_y] ||= {}
-        @@era_table[e_y][e_m] = era_record
-      end
-      @@era_table
-    end
   end
 end # Wareki::Date
