@@ -4,6 +4,9 @@ module Wareki::Date
   module Keio
     include Era
 
+    ERA_NAME = 'keio'
+    KANJI_ERA_NAME = '慶応'
+
     # http://ja.wikipedia.org/wiki/%E6%85%B6%E5%BF%9C
     # 慶応元年（乙丑）      一月     二月     三月     四月     五月     閏五月   六月     七月     八月     九月       十月     十一月     十二月
     # グレゴリオ暦     1865/1/27     2/26     3/27     4/25     5/25     6/23     7/23     8/21     9/20    10/20      11/18      12/18     1866/1/17

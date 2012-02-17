@@ -4,6 +4,9 @@ module Wareki::Date
   module Meiji
     include Era
 
+    ERA_NAME = 'meiji'
+    KANJI_ERA_NAME = '明治'
+
     # http://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB
     # 明治元年（戊辰）      一月     二月     三月     四月     閏四月   五月     六月     七月     八月     九月     十月       十一月     十二月
     # グレゴリオ暦     1868/1/25     2/23     3/24     4/23     5/22     6/20     7/20     8/18     9/16     10/16    11/14      12/14      1869/1/13
