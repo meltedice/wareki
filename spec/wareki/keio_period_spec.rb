@@ -3,12 +3,6 @@
 require "spec_helper"
 require 'wareki'
 
-RSpec::Matchers.define :be_date do |date_str|
-  match do |wareki_date|
-    wareki_date.strftime("%Y-%m-%d") == Date.parse(date_str).strftime("%Y-%m-%d")
-  end
-end
-
 describe Date do
   def date(str) Date.parse(str) end
 
