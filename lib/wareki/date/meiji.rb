@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-module Wareki::Date
-  module Meiji
-    include Era
-
-    ERA_NAME = 'meiji'
-    KANJI_ERA_NAME = '明治'
+module Wareki
+  module Date
+    # ERA_NAME = 'meiji'
+    # KANJI_ERA_NAME = '明治'
 
     # http://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB
     # 明治元年（戊辰）      一月     二月     三月     四月     閏四月   五月     六月     七月     八月     九月     十月       十一月     十二月
@@ -24,7 +22,7 @@ module Wareki::Date
     # g_y: gregorian_year
     # g_m: gregorian_month
     # g_d: gregorian_mday
-    TABLE = [{:era => :meiji, :e_y => 1, :e_m =>  1, :g_y => 1868, :g_m =>  1, :g_d => 25},
+    table = [{:era => :meiji, :e_y => 1, :e_m =>  1, :g_y => 1868, :g_m =>  1, :g_d => 25},
              {:era => :meiji, :e_y => 1, :e_m =>  2, :g_y => 1868, :g_m =>  2, :g_d => 23},
              {:era => :meiji, :e_y => 1, :e_m =>  3, :g_y => 1868, :g_m =>  3, :g_d => 24},
              {:era => :meiji, :e_y => 1, :e_m =>  4, :g_y => 1868, :g_m =>  4, :g_d => 23},
@@ -91,5 +89,6 @@ module Wareki::Date
              {:era => :meiji, :e_y => 5, :e_m => 11, :g_y => 1872, :g_m => 12, :g_d =>  1},
              {:era => :meiji, :e_y => 5, :e_m => 12, :g_y => 1872, :g_m => 12, :g_d => 30},
             ]
+    add_era_table table
   end
 end # Wareki::Date

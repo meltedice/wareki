@@ -9,7 +9,7 @@ module Wareki
         era, year, month, mday = $1.downcase, $2.to_i, $3.to_i, $4.to_i
         if era == 'm' && year < 6
           require 'wareki/date/meiji'
-          bom = Meiji.era_table[year][month]
+          bom = era_table[year][month]
           return ::Date.new(bom[:g_y], bom[:g_m], bom[:g_d]) + (mday - 1)
         end
         return ::Date.parse(str)
@@ -19,20 +19,42 @@ module Wareki
       end
     end # parse
 
-    private
+    protected
+
+    def self.add_era_table(era_table)
+      @@era_table = {}
+      era_table.each do |era_record|
+        e_y = era_record[:e_y]
+        e_m = era_record[:leap_month] ? "#{era_record[:e_m]}*" : era_record[:e_m]
+        @@era_table[e_y] ||= {}
+        @@era_table[e_y][e_m] = era_record
+      end
+    end
+
+    def self.era_table
+      if defined?(@@era_table)
+        @@era_table
+      else
+        @@era_table = {}
+      end
+    end
 
     def self._parse(era, year, month, mday)
-      bom = nil
+      @@eras ||= {}
       case era
       when 'k', 'keio'
-        require 'wareki/date/keio'
-        bom = Keio.era_table[year][month]
+        era_name = 'keio'
       when 'g', 'genji'
-        require 'wareki/date/genji'
-        bom = Genji.era_table[year][month]
+        era_name = 'genji'
       else
         raise 'Unknown era'
       end
+
+      unless @@eras[era_name]
+        require "wareki/date/#{era_name}"
+        @@eras[era_name] = true
+      end
+      bom = era_table[year][month]
       ::Date.new(bom[:g_y], bom[:g_m], bom[:g_d]) + (mday - 1)
     end
   end # Date

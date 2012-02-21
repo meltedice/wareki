@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-module Wareki::Date
-  module Keio
-    include Era
-
-    ERA_NAME = 'keio'
-    KANJI_ERA_NAME = '慶応'
+module Wareki
+  module Date
+    # ERA_NAME = 'keio'
+    # KANJI_ERA_NAME = '慶応'
 
     # http://ja.wikipedia.org/wiki/%E6%85%B6%E5%BF%9C
     # 慶応元年（乙丑）      一月     二月     三月     四月     五月     閏五月   六月     七月     八月     九月       十月     十一月     十二月
@@ -22,7 +20,7 @@ module Wareki::Date
     # g_y: gregorian_year
     # g_m: gregorian_month
     # g_d: gregorian_mday
-    TABLE = [{:era => :keio, :e_y => 1, :e_m =>  1, :g_y => 1865, :g_m =>  1, :g_d => 27},
+    table = [{:era => :keio, :e_y => 1, :e_m =>  1, :g_y => 1865, :g_m =>  1, :g_d => 27},
              {:era => :keio, :e_y => 1, :e_m =>  2, :g_y => 1865, :g_m =>  2, :g_d => 26},
              {:era => :keio, :e_y => 1, :e_m =>  3, :g_y => 1865, :g_m =>  3, :g_d => 27},
              {:era => :keio, :e_y => 1, :e_m =>  4, :g_y => 1865, :g_m =>  4, :g_d => 25},
@@ -76,5 +74,6 @@ module Wareki::Date
              {:era => :keio, :e_y => 4, :e_m => 11, :g_y => 1868, :g_m => 12, :g_d => 14},
              {:era => :keio, :e_y => 4, :e_m => 12, :g_y => 1868, :g_m =>  1, :g_d => 13},
              ]
-  end
-end # Wareki::Date
+    add_era_table table
+  end # Date
+end # Wareki
