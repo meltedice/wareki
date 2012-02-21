@@ -8,11 +8,10 @@ module Wareki
       when /^([mtsh])(\d+)\.(\d+)\.(\d+)/i
         era, year, month, mday = $1.downcase, $2.to_i, $3.to_i, $4.to_i
         if era == 'm' && year < 6
-          require 'wareki/date/meiji'
-          bom = era_table[year][month]
-          return ::Date.new(bom[:g_y], bom[:g_m], bom[:g_d]) + (mday - 1)
+          return _parse(era, year, month, mday)
+        else
+          return ::Date.parse(str)
         end
-        return ::Date.parse(str)
       when /^([a-z]+)(\d+)\.(\d+)\.(\d+)/i
         era, year, month, mday = $1.downcase, $2.to_i, $3.to_i, $4.to_i
         return _parse(era, year, month, mday)
@@ -42,6 +41,8 @@ module Wareki
     def self._parse(era, year, month, mday)
       @@eras ||= {}
       case era
+      when 'm', 'meiji'
+        era_name = 'meiji'
       when 'k', 'keio'
         era_name = 'keio'
       when 'g', 'genji'
