@@ -47,6 +47,8 @@ module Wareki
         era_name = 'keio'
       when 'g', 'genji'
         era_name = 'genji'
+      when 'b', 'bunkyu'
+        era_name = 'bunkyu'
       else
         raise 'Unknown era'
       end
