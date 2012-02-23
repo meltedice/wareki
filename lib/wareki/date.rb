@@ -41,11 +41,17 @@ module Wareki
       '元治' => 'genji',   # 1864年 げんじ Genji
       '慶応' => 'keio',    # 1865年 けいおう Keiō
       # 明治時代以降
-      '明治' => 'm', # 1912/07/30 めいじ
-      '大正' => 't', # 1912/07/30 たいしょう
-      '昭和' => 's', # 1926/12/25 しょうわ
-      '平成' => 'h', # 1989/01/08 へいせい
+      '明治' => 'm',       # 1912/07/30 めいじ
+      '大正' => 't',       # 1912/07/30 たいしょう
+      '昭和' => 's',       # 1926/12/25 しょうわ
+      '平成' => 'h',       # 1989/01/08 へいせい
+      # '明治' => 'meiji',   # 1912/07/30 めいじ
+      # '大正' => 'taisho',  # 1912/07/30 たいしょう
+      # '昭和' => 'showa',   # 1926/12/25 しょうわ
+      # '平成' => 'heisei',  # 1989/01/08 へいせい
     }
+    KNOWN_WAREKI_SHORT_ERA_MAP = Hash[*WAREKI_SHORT_ERA_NAME_TABLE.map {|k, v| [v, v, k, v]}.flatten]
+    KNOWN_WAREKI_LONG_ERA_MAP  = Hash[*WAREKI_LONG_ERA_NAME_TABLE.map  {|k, v| [v, v, k, v]}.flatten]
 
     def self.parse(str)
       # puts "str ==> #{str}"
@@ -133,16 +139,9 @@ module Wareki
       case era
       when 'm', 'meiji'
         era_name = 'meiji'
-      when 'keio', '慶応', 'けいおう'
-        era_name = 'keio'
-      when 'genji', '元治', 'げんじ'
-        era_name = 'genji'
-      when 'bunkyu', '文久', 'ぶんきゅう'
-        era_name = 'bunkyu'
-      when 'manen', '万延', 'まんえん'
-        era_name = 'manen'
       else
-        raise 'Unknown era'
+        era_name = KNOWN_WAREKI_LONG_ERA_MAP[era]
+        raise 'Unknown era' if era_name.nil?
       end
 
       unless @@eras[era_name]
