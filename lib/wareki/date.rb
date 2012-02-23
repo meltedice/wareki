@@ -93,10 +93,11 @@ module Wareki
       n.gsub! '七', '7'
       n.gsub! '八', '8'
       n.gsub! '九', '9'
+      return 10 if n == '十'
       return n.to_i if n =~ number_pattern
-      # n.gsub! '十', '10'
-      # while n =~ number_pattern
-      # end
+      n.gsub! /(\d)十(\d)/, '\1\2'
+      n.gsub! /(^|[^\d])十([\d])/, '\11\2'
+      n.gsub! /([\d])十([^\d]|$)/, '\10\2'
       n.to_i
     end
 

@@ -20,7 +20,13 @@ describe Date do
       Wareki::Date.parse_kanji_number("一一").should == 11
       Wareki::Date.parse_kanji_number("一二").should == 12
 
-      # Wareki::Date.parse_kanji_number("十").should == 10
+      Wareki::Date.parse_kanji_number("十").should == 10
+
+      Wareki::Date.parse_kanji_number("十一").should == 11
+      Wareki::Date.parse_kanji_number("十三").should == 13
+      Wareki::Date.parse_kanji_number("三十").should == 30
+      Wareki::Date.parse_kanji_number("九十").should == 90
+      Wareki::Date.parse_kanji_number("九十七").should == 97
 
       # Wareki::Date.parse_kanji_number("昭和十一年十二月二十五日").should == "s11.12.25"
     end
