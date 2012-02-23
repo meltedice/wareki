@@ -73,9 +73,16 @@ module Wareki
         str[0,2] = WAREKI_LONG_ERA_NAME_TABLE[str[0,2]]
       end
       unless /^([a-z]+)(\d+)\.(\d+)\.(\d+)/i =~ str
+        str.sub! '元', '1'
         str.sub! '年', '.'
         str.sub! '月', '.'
         str.sub! '日', ''
+        unless /^([a-z]+)(\d+)\.(\d+)\.(\d+)/i =~ str
+          if /^([a-z]+)(.+)\.(.+)\.(.+)/i =~ str
+            era, y, m, d = $1, parse_kanji_number($2), parse_kanji_number($3), parse_kanji_number($4)
+            str = "#{era}%02d.%02d.%02d" % [y, m, d]
+          end
+        end
       end
       str
     end
