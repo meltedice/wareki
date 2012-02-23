@@ -43,13 +43,13 @@ module Wareki
       case era
       when 'm', 'meiji'
         era_name = 'meiji'
-      when 'k', 'keio'
+      when 'keio'
         era_name = 'keio'
-      when 'g', 'genji'
+      when 'genji'
         era_name = 'genji'
-      when 'b', 'bunkyu'
+      when 'bunkyu'
         era_name = 'bunkyu'
-      when 'm', 'manen'
+      when 'manen'
         era_name = 'manen'
       else
         raise 'Unknown era'

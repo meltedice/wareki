@@ -19,6 +19,9 @@ describe Date do
       # 明治五年（壬申）      一月     二月     三月     四月     五月     六月     七月     八月     九月     十月     十一月     十二月     
       # グレゴリオ暦     1872/2/9      3/9      4/8      5/7      6/6      7/6      8/4      9/3      10/3     11/1     12/1       12/30
 
+      Wareki::Date.parse("meiji01.01.01").should be_date("1868-01-25")
+      Wareki::Date.parse("Meiji01.01.02").should be_date("1868-01-26")
+
       Wareki::Date.parse("m01.01.01").should be_date("1868-01-25")
       Wareki::Date.parse("m01.01.02").should be_date("1868-01-26")
 

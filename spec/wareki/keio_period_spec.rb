@@ -17,12 +17,12 @@ describe Date do
       # 慶応四年（戊辰）      一月     二月     三月     四月   閏四月     五月     六月     七月     八月     九月       十月     十一月     十二月
       # グレゴリオ暦     1868/1/25     2/23     3/24     4/23     5/22     6/20     7/20     8/18     9/16    10/16      11/14      12/14     1869/1/13
 
-      Wareki::Date.parse("k01.01.01").should be_date("1865-01-27")
-      Wareki::Date.parse("k01.02.01").should be_date("1865-02-26")
-      Wareki::Date.parse("k01.03.01").should be_date("1865-03-27")
-      Wareki::Date.parse("k02.04.01").should be_date("1866-05-15")
-      Wareki::Date.parse("k03.05.01").should be_date("1867-06-03")
-      Wareki::Date.parse("k04.06.01").should be_date("1868-07-20")
+      Wareki::Date.parse("keio01.01.01").should be_date("1865-01-27")
+      Wareki::Date.parse("keio01.02.01").should be_date("1865-02-26")
+      Wareki::Date.parse("keio01.03.01").should be_date("1865-03-27")
+      Wareki::Date.parse("keio02.04.01").should be_date("1866-05-15")
+      Wareki::Date.parse("keio03.05.01").should be_date("1867-06-03")
+      Wareki::Date.parse("keio04.06.01").should be_date("1868-07-20")
     end
   end
 end

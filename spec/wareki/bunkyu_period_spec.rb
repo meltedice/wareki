@@ -18,13 +18,13 @@ describe Date do
       # 文久四年（甲子）      一月     二月     三月     四月     五月     六月     七月     八月       九月      十月     十一月     十二月     
       # グレゴリオ暦      1864/2/8      3/8      4/6      5/6      6/4      7/4      8/2      9/1       10/1     10/31      11/29      12/29     
 
-      Wareki::Date.parse("b01.01.01").should be_date("1861-02-10")
-      Wareki::Date.parse("b01.02.01").should be_date("1861-03-11")
-      Wareki::Date.parse("b01.03.01").should be_date("1861-04-10")
-      Wareki::Date.parse("b02.04.01").should be_date("1862-04-29")
-      Wareki::Date.parse("b02.12.01").should be_date("1863-01-20")
-      Wareki::Date.parse("b04.01.01").should be_date("1864-02-08")
-      Wareki::Date.parse("b04.12.01").should be_date("1864-12-29")
+      Wareki::Date.parse("bunkyu01.01.01").should be_date("1861-02-10")
+      Wareki::Date.parse("bunkyu01.02.01").should be_date("1861-03-11")
+      Wareki::Date.parse("bunkyu01.03.01").should be_date("1861-04-10")
+      Wareki::Date.parse("bunkyu02.04.01").should be_date("1862-04-29")
+      Wareki::Date.parse("bunkyu02.12.01").should be_date("1863-01-20")
+      Wareki::Date.parse("bunkyu04.01.01").should be_date("1864-02-08")
+      Wareki::Date.parse("bunkyu04.12.01").should be_date("1864-12-29")
     end
   end
 end

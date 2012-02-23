@@ -14,11 +14,11 @@ describe Date do
       # 元治二年（乙丑）     一月     二月     三月     四月     五月   閏五月     六月     七月     八月      九月       十月     十一月     十二月
       # グレゴリオ暦    1865/1/27     2/26     3/27     4/25     5/25     6/23     7/23     8/21     9/20     10/20      11/18      12/18     1866/1/17
 
-      Wareki::Date.parse("g01.01.01").should be_date("1864-02-08")
-      Wareki::Date.parse("g01.02.01").should be_date("1864-03-08")
-      Wareki::Date.parse("g01.03.01").should be_date("1864-04-06")
-      Wareki::Date.parse("g02.04.01").should be_date("1865-04-25")
-      Wareki::Date.parse("g02.12.01").should be_date("1866-01-17")
+      Wareki::Date.parse("genji01.01.01").should be_date("1864-02-08")
+      Wareki::Date.parse("genji01.02.01").should be_date("1864-03-08")
+      Wareki::Date.parse("genji01.03.01").should be_date("1864-04-06")
+      Wareki::Date.parse("genji02.04.01").should be_date("1865-04-25")
+      Wareki::Date.parse("genji02.12.01").should be_date("1866-01-17")
     end
   end
 end
