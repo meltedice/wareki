@@ -1,6 +1,9 @@
 # Wareki
 
-TODO: Write a gem description
+Wareki - Japanese Calendar
+
+http://en.wikipedia.org/wiki/Japanese_era_name
+http://en.wikipedia.org/wiki/List_of_Japanese_era_names
 
 ## Installation
 
@@ -18,7 +21,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'wareki'
+
+    # m means Meiji era
+    Wareki::Date.parse("m01.01.03") # => 1868-01-27
 
 ## Contributing
 
