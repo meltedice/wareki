@@ -12,7 +12,7 @@ module Wareki
         else
           return ::Date.parse(str)
         end
-      when /^([a-z]+)(\d+)\.(\d+)\.(\d+)/i
+      when /^([^0-9]+)(\d+)\.(\d+)\.(\d+)/i
         era, year, month, mday = $1.downcase, $2.to_i, $3.to_i, $4.to_i
         return _parse(era, year, month, mday)
       end
@@ -43,13 +43,13 @@ module Wareki
       case era
       when 'm', 'meiji'
         era_name = 'meiji'
-      when 'keio'
+      when 'keio', '慶応', 'けいおう'
         era_name = 'keio'
-      when 'genji'
+      when 'genji', '元治', 'げんじ'
         era_name = 'genji'
-      when 'bunkyu'
+      when 'bunkyu', '文久', 'ぶんきゅう'
         era_name = 'bunkyu'
-      when 'manen'
+      when 'manen', '万延', 'まんえん'
         era_name = 'manen'
       else
         raise 'Unknown era'
