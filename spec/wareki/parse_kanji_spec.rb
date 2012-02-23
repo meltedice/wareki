@@ -18,5 +18,10 @@ describe Date do
       Wareki::Date.parse_kanji("昭和01.01.01").should == "s01.01.01"
       Wareki::Date.parse_kanji("平成01.01.01").should == "h01.01.01"
     end
+
+    it "should translate kanji date format" do
+      Wareki::Date.parse_kanji("昭和01年01月01日").should == "s01.01.01"
+      Wareki::Date.parse_kanji("平成01年01月01日").should == "h01.01.01"
+    end
   end
 end

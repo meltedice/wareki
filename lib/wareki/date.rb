@@ -72,6 +72,11 @@ module Wareki
       else
         str[0,2] = WAREKI_LONG_ERA_NAME_TABLE[str[0,2]]
       end
+      unless /^([a-z]+)(\d+)\.(\d+)\.(\d+)/i =~ str
+        str.sub! '年', '.'
+        str.sub! '月', '.'
+        str.sub! '日', ''
+      end
       str
     end
 
