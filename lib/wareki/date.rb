@@ -80,6 +80,26 @@ module Wareki
       str
     end
 
+    def self.parse_kanji_number(kanji_number)
+      number_pattern = /^[0-9]+$/
+      n = kanji_number.dup
+      n.gsub! '〇', '0'
+      n.gsub! '一', '1'
+      n.gsub! '二', '2'
+      n.gsub! '三', '3'
+      n.gsub! '四', '4'
+      n.gsub! '五', '5'
+      n.gsub! '六', '6'
+      n.gsub! '七', '7'
+      n.gsub! '八', '8'
+      n.gsub! '九', '9'
+      return n.to_i if n =~ number_pattern
+      # n.gsub! '十', '10'
+      # while n =~ number_pattern
+      # end
+      n.to_i
+    end
+
     protected
 
     def self.add_era_table(era_table)
