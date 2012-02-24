@@ -72,7 +72,7 @@ module Wareki
              {:era => :keio, :e_y => 4, :e_m =>  9, :g_y => 1868, :g_m => 10, :g_d => 16},
              {:era => :keio, :e_y => 4, :e_m => 10, :g_y => 1868, :g_m => 11, :g_d => 14},
              {:era => :keio, :e_y => 4, :e_m => 11, :g_y => 1868, :g_m => 12, :g_d => 14},
-             {:era => :keio, :e_y => 4, :e_m => 12, :g_y => 1868, :g_m =>  1, :g_d => 13},
+             {:era => :keio, :e_y => 4, :e_m => 12, :g_y => 1869, :g_m =>  1, :g_d => 13},
              ]
     add_era_table table
   end # Date

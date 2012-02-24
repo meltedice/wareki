@@ -47,7 +47,7 @@ module Wareki
              {:era => :meiji, :e_y => 2, :e_m =>  9, :g_y => 1869, :g_m => 10, :g_d =>  5},
              {:era => :meiji, :e_y => 2, :e_m => 10, :g_y => 1869, :g_m => 11, :g_d =>  4},
              {:era => :meiji, :e_y => 2, :e_m => 11, :g_y => 1869, :g_m => 12, :g_d =>  3},
-             {:era => :meiji, :e_y => 2, :e_m => 12, :g_y => 1869, :g_m =>  1, :g_d =>  2},
+             {:era => :meiji, :e_y => 2, :e_m => 12, :g_y => 1870, :g_m =>  1, :g_d =>  2},
 
              {:era => :meiji, :e_y => 3, :e_m =>  1, :g_y => 1870, :g_m =>  2, :g_d =>  1},
              {:era => :meiji, :e_y => 3, :e_m =>  2, :g_y => 1870, :g_m =>  3, :g_d =>  2},
