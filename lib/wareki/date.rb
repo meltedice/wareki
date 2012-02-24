@@ -117,12 +117,28 @@ module Wareki
     protected
 
     def self.add_era_table(era_table)
-      @@era_table = {}
+      @@era_table ||= {}
+      @@debug_last_record ||= {} # DEBUG
       era_table.each do |era_record|
+        if @@debug_last_record[era_record[:era]] # DEBUG
+          r1 = @@debug_last_record[era_record[:era]]
+          r2 = era_record
+          s1 = "%02d/%02d/%02d" % [r1[:g_y], r1[:g_m], r1[:g_d]]
+          s2 = "%02d/%02d/%02d" % [r2[:g_y], r2[:g_m], r2[:g_d]]
+          d1 = ::Date.parse(s1)
+          d2 = ::Date.parse(s2)
+          # puts "#{era_record}"
+          unless d1 < d2
+            puts
+            puts "---------- invalid record: #{r2}  :  #{d1} < #{d2}"
+            puts "                           #{r1}"
+          end
+        end
         e_y = era_record[:e_y]
         e_m = era_record[:leap_month] ? "#{era_record[:e_m]}*" : era_record[:e_m]
         @@era_table[e_y] ||= {}
         @@era_table[e_y][e_m] = era_record
+        @@debug_last_record[era_record[:era]] = era_record # DEBUG
       end
     end
 
