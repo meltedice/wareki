@@ -26,6 +26,7 @@ module Wareki
       str
     end
 
+    # FIXME
     def self.parse_number(kanji_number)
       number_pattern = /^[0-9]+$/
       n = kanji_number.dup
@@ -39,6 +40,10 @@ module Wareki
       n.gsub! '七', '7'
       n.gsub! '八', '8'
       n.gsub! '九', '9'
+      n.gsub! '元', '1'
+      n.gsub! '壱', '1'
+      n.gsub! '弐', '2'
+      n.gsub! '参', '3'
       return 10 if n == '十'
       return n.to_i if n =~ number_pattern
       n.gsub! /(\d)十(\d)/, '\1\2'
