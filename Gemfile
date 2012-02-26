@@ -6,3 +6,7 @@ gemspec
 group :test do
   gem 'rspec', '~> 2.0.0.beta.22'
 end
+
+group :development, :test do
+  gem 'nokogiri'
+end
