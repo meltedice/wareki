@@ -7,3 +7,5 @@ RSpec::Core::RakeTask.new do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rspec_opts = ['--backtrace']
 end
+
+Dir["#{File.dirname(__FILE__)}/lib/wareki/tasks/**/*.rake"].sort.each { |ext| load ext }
