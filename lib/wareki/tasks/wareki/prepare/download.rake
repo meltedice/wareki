@@ -6,16 +6,18 @@ namespace :wareki do
     task :download do
       puts 'downloading...'
       FileUtils.mkpath(File.join(DATA_DIR, 'html'))
-      uri = 'http://ja.wikipedia.org/wiki/%E6%96%87%E5%8C%96_%28%E5%85%83%E5%8F%B7%29' # 文化
-      uris = [uri]
-      uris.each do |uri|
-        open(uri) do |content|
-          path = File.join(DATA_DIR, 'html', 'bunka.html')
+      eras = YAML.load_file(File.join(DATA_DIR, "eras.yml"))
+      first = true
+      eras.each do |era|
+        sleep 1 unless first
+        open(era['uri']) do |content|
+          path = File.join(DATA_DIR, 'html', "#{era['name_en'].downcase}.html")
           open(path, 'wb') do |html|
-            puts '%50s << %s' % [path, uri]
+            puts '%s %50s << %s' % [era['name'], path, era['uri']]
             html.write content.read
           end
         end
+        first = false
       end
       puts 'download completed!'
     end # task
