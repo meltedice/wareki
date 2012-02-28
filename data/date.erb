@@ -30,7 +30,7 @@ module Wareki
 <% era[:years].each do |year| -%>
 <% year[:months].each do |month| -%>
 <% bom = Date.parse(month[:beginning_of_month]) -%>
-             {:era => :<%= era[:era_name_en].downcase -%>
+             {:era => :<%= era[:era_name_en_downcase] -%>
 , :e_y => <%= '%2d' % year[:era_year] -%>
 , :e_m => <%= '%2d' % month[:era_month] -%>
 , :g_y => <%= '%4d' % bom.year -%>

@@ -16,7 +16,13 @@ namespace :wareki do
       yaml_path = File.join(DATA_DIR, 'yaml', "#{e['name_en'].downcase}.yml")
       era = YAML.load_file(yaml_path)
 
-      puts template.result(binding)
+      rb_path = File.join(WAREKI_ROOT, 'lib/wareki/date', "#{e['name_en'].downcase}.rb")
+      src = template.result(binding)
+      open(rb_path, "w") do |f|
+        f.write src
+      end
+      puts ">> #{rb_path}"
+      puts src
     end
     puts "build completed!"
   end # task
