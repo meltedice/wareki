@@ -51,9 +51,9 @@ module Wareki
 
     # parse date before Meiji 6th
     def self._parse(str)
-      str = ::Wareki::Kanji.format_date(str) if str[0] =~ /[^0-9A-z.]/ # /^[^0-9A-z]/
-      if /^([^0-9]+)(\d+)\.(\d+)\.(\d+)/i =~ str
-        era, year, month, mday = $1.downcase, $2.to_i, $3.to_i, $4.to_i
+      str = ::Wareki::Kanji.format_date(str) if str[0] =~ /[^0-9A-z.*]/ # /^[^0-9A-z]/
+      if /^([^0-9]+)(\d+)\.(\d+)(\*?)\.(\d+)/i =~ str
+        era, year, month, leap_month, mday = $1.downcase, $2.to_i, $3.to_i, $4, $5.to_i
       else
         return nil
       end
@@ -74,7 +74,8 @@ module Wareki
           raise ArgumentError, "Unknown era '#{era_name}': #{e}"
         end
       end
-      bom = era_table[year][month]
+      month_ = leap_month == '*' ? "#{month}*" : month
+      bom = era_table[year][month_]
       ::Date.new(bom[:g_y], bom[:g_m], bom[:g_d]) + (mday - 1)
     end
   end # Date
