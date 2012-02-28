@@ -13,7 +13,7 @@ namespace :wareki do
         open(era['uri']) do |content|
           path = File.join(DATA_DIR, 'html', "#{era['name_en'].downcase}.html")
           open(path, 'wb') do |html|
-            puts '%s %50s << %s' % [era['name'], path, era['uri']]
+            puts '%s %-60s << %s' % [era['name'], path, era['uri']]
             html.write content.read
           end
         end
