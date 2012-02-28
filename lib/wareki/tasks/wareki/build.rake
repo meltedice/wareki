@@ -22,7 +22,7 @@ namespace :wareki do
         f.write src
       end
       puts ">> #{rb_path}"
-      puts src
+      # puts src
     end
     puts "build completed!"
   end # task

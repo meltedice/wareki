@@ -22,8 +22,13 @@ namespace :wareki do
         era[:years] = []
 
         # <table cellspacing="0" cellpadding="2" border="1" style="text-align:center">
-        tables = html.xpath('//table[@cellspacing="0"][@cellpadding="2"][@border="1"][@style="text-align:center"]')
-        table = tables.first
+        # tables = html.xpath('//table[@cellspacing="0"][@cellpadding="2"][@border="1"][@style="text-align:center"]')
+        # table = tables.first
+        tables = html.xpath('//table')
+        table = tables.find {|t|
+          jan = t.css('tr > th')[1].content rescue nil
+          jan == '一月'
+        }
 
         tr_type = :header # :gregorian, :jurian, グレゴリオ歴, ユリウス歴
         current_year = {}
