@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+module Wareki
+  module Date
+    # ERA_NAME = '<%= era[:era_name_en] %>'
+    # KANJI_ERA_NAME = '<%= era[:era_name] %>'
+
+    # <%= era[:era_name] %>
+    # <%= era[:wikipedia_uri] %>
+<% era[:years].each do |year| -%>
+<% era_year = era[:era_name] + year[:era_year_ja] + '年 (' + year[:eto_name] + ')' -%>
+<% title_length = 22 - era_year.size -%>
+    # | <%= "%-#{title_length}s " % era_year %>|<% year[:months].each do |month| -%>
+<% month_ja_str = month[:leap_month] ? '閏' : '' -%>
+<% month_ja_str += month[:era_month_kanji] + '月' -%>
+<% month_str_length = 10 - month_ja_str.size -%>
+<%= " %#{month_str_length}s |" % month_ja_str -%>
+<% end %>
+    # |        グレゴリオ暦 |<% year[:months].each do |month| -%>
+<%= " %10s |" % month[:beginning_of_month] -%>
+<% end %>
+<% end -%>
+
+    # e_y: era_year
+    # e_m: era_month
+    # g_y: gregorian_year
+    # g_m: gregorian_month
+    # g_d: gregorian_mday
+    table = [
+<% era[:years].each do |year| -%>
+<% year[:months].each do |month| -%>
+<% bom = Date.parse(month[:beginning_of_month]) -%>
+             {:era => :<%= era[:era_name_en].downcase -%>
+, :e_y => <%= '%2d' % year[:era_year] -%>
+, :e_m => <%= '%2d' % month[:era_month] -%>
+, :g_y => <%= '%4d' % bom.year -%>
+, :g_m => <%= '%2d' % bom.month -%>
+, :g_d => <%= '%2d' % bom.mday -%>
+<% if month[:leap_month] %>, :leap_month => true<% end %>},
+<% end %>
+<% end -%>
+            ]
+
+    add_era_table table
+  end # Date
+end # Wareki
