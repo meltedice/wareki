@@ -15,6 +15,8 @@ namespace :wareki do
         html = Nokogiri::HTML(open(html_path))
 
         era = {}
+        era[:wikipedia_uri] = e['uri']
+        era[:era_name_en_downcase] = e['name_en'].downcase
         era[:era_name_en] = html.css('ul > li.interwiki-en > a').first["href"].split('/').last rescue nil
         era[:era_name] = html.css('#firstHeading').first.content.sub(/ \(.*$/, '') rescue nil
         era[:years] = []
@@ -68,11 +70,11 @@ namespace :wareki do
               #   "%#{length}s  " % m[:era_month_kanji]
               # }.join
               # puts current_year[:months].map {|m| "%10s  " % m[:beginning_of_month]}.join("")
+              era[:years] << current_year unless current_year.empty?
               current_year = {}
               tr_type = :header
             end
           end
-          era[:years] << current_year unless current_year.empty?
         end
         open(yaml_path, 'w') do |f|
           f.write era.to_yaml
