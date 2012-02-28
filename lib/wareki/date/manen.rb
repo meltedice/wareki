@@ -2,7 +2,7 @@
 
 module Wareki
   module Date
-    # ERA_NAME = 'Man%27en'
+    # ERA_NAME = 'Man%27en' # 
     # KANJI_ERA_NAME = '万延'
 
     # 万延

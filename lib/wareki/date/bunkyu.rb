@@ -2,7 +2,7 @@
 
 module Wareki
   module Date
-    # ERA_NAME = 'Bunky%C5%AB'
+    # ERA_NAME = 'Bunky%C5%AB' # 
     # KANJI_ERA_NAME = '文久'
 
     # 文久

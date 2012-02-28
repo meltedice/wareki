@@ -2,7 +2,7 @@
 
 module Wareki
   module Date
-    # ERA_NAME = 'Bunka'
+    # ERA_NAME = 'Bunka' # 
     # KANJI_ERA_NAME = '文化'
 
     # 文化

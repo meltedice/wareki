@@ -2,7 +2,7 @@
 
 module Wareki
   module Date
-    # ERA_NAME = 'Genji'
+    # ERA_NAME = 'Genji' # 
     # KANJI_ERA_NAME = '元治'
 
     # 元治
