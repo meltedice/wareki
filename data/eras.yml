@@ -1,159 +1,155 @@
 # -*- coding: utf-8 -*-
 
-# - name: 文化
-#   name_en: Bunka
-#   uri: http://ja.wikipedia.org/wiki/%E6%96%87%E5%8C%96_%28%E5%85%83%E5%8F%B7%29
-
-# - year: 1615
-#   name: 元和
-#   name_en: "Genna"
-#   name_en_: "Genna"
-#   name_kana: げんな
-#   uri: http://ja.wikipedia.org/wiki/%E5%85%83%E5%92%8C_(%E6%97%A5%E6%9C%AC)
-# - year: 1624
-#   name: 寛永
-#   name_en: "Kanei"
-#   name_en_: "Kan'ei"
-#   name_kana: かんえい
-#   uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%B0%B8
-# - year: 1644
-#   name: 正保
-#   name_en: "Shoho"
-#   name_en_: "Shōhō"
-#   name_kana: しょうほう
-#   uri: http://ja.wikipedia.org/wiki/%E6%AD%A3%E4%BF%9D
-# - year: 1648
-#   name: 慶安
-#   name_en: "Keian"
-#   name_en_: "Keian"
-#   name_kana: けいあん
-#   uri: http://ja.wikipedia.org/wiki/%E6%85%B6%E5%AE%89
-# - year: 1652
-#   name: 承応
-#   name_en: "Joo"
-#   name_en_: "Jōō"
-#   name_kana: じょうおう
-#   uri: http://ja.wikipedia.org/wiki/%E6%89%BF%E5%BF%9C
-# - year: 1655
-#   name: 明暦
-#   name_en: "Meireki"
-#   name_en_: "Meireki"
-#   name_kana: めいれき
-#   uri: http://ja.wikipedia.org/wiki/%E6%98%8E%E6%9A%A6
-# - year: 1658
-#   name: 万治
-#   name_en: "Manji"
-#   name_en_: "Manji"
-#   name_kana: まんじ
-#   uri: http://ja.wikipedia.org/wiki/%E4%B8%87%E6%B2%BB
-# - year: 1661
-#   name: 寛文
-#   name_en: "Kanbun"
-#   name_en_: "Kanbun"
-#   name_kana: かんぶん
-#   uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%96%87
-# - year: 1673
-#   name: 延宝
-#   name_en: "Enpo"
-#   name_en_: "Enpō"
-#   name_kana: えんぽう
-#   uri: http://ja.wikipedia.org/wiki/%E5%BB%B6%E5%AE%9D
-# - year: 1681
-#   name: 天和
-#   name_en: "Tenna"
-#   name_en_: "Tenna"
-#   name_kana: てんな
-#   uri: http://ja.wikipedia.org/wiki/%E5%A4%A9%E5%92%8C_(%E6%97%A5%E6%9C%AC)
-# - year: 1684
-#   name: 貞享
-#   name_en: "Jokyo"
-#   name_en_: "Jōkyō"
-#   name_kana: じょうきょう
-#   uri: http://ja.wikipedia.org/wiki/%E8%B2%9E%E4%BA%AB
-# - year: 1688
-#   name: 元禄
-#   name_en: "Genroku"
-#   name_en_: "Genroku"
-#   name_kana: げんろく
-#   uri: http://ja.wikipedia.org/wiki/%E5%85%83%E7%A6%84
-# - year: 1704
-#   name: 宝永
-#   name_en: "Hoei"
-#   name_en_: "Hōei"
-#   name_kanほうえいa: 
-#   uri: http://ja.wikipedia.org/wiki/%E5%AE%9D%E6%B0%B8
-# - year: 1711
-#   name: 正徳
-#   name_en: "Shotoku"
-#   name_en_: "Shōtoku"
-#   name_kana: しょうとく
-#   uri: http://ja.wikipedia.org/wiki/%E6%AD%A3%E5%BE%B3_(%E6%97%A5%E6%9C%AC)
-# - year: 1716
-#   name: 享保
-#   name_en: "Kyoho"
-#   name_en_: "Kyōhō"
-#   name_kana: きょうほう
-#   uri: http://ja.wikipedia.org/wiki/%E4%BA%AB%E4%BF%9D
-# - year: 1736
-#   name: 元文
-#   name_en: "Genbun"
-#   name_en_: "Genbun"
-#   name_kana: げんぶん
-#   uri: http://ja.wikipedia.org/wiki/%E5%85%83%E6%96%87
-# - year: 1741
-#   name: 寛保
-#   name_en: "Kanpo"
-#   name_en_: "Kanpō"
-#   name_kana: かんぽう
-#   uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E4%BF%9D
-# - year: 1744
-#   name: 延享
-#   name_en: "Enkyo"
-#   name_en_: "Enkyō"
-#   name_kanえんきょうa: 
-#   uri: http://ja.wikipedia.org/wiki/%E5%BB%B6%E4%BA%AB
-# - year: 1748
-#   name: 寛延
-#   name_en: "Kanen"
-#   name_en_: "Kan'en"
-#   name_kana: かんえん
-#   uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E5%BB%B6
-# - year: 1751
-#   name: 宝暦
-#   name_en: "Horeki"
-#   name_en_: "Hōreki"
-#   name_kana: ほうれき
-#   uri: http://ja.wikipedia.org/wiki/%E5%AE%9D%E6%9A%A6
-# - year: 1764
-#   name: 明和
-#   name_en: "Meiwa"
-#   name_en_: "Meiwa"
-#   name_kana: めいわ
-#   uri: http://ja.wikipedia.org/wiki/%E6%98%8E%E5%92%8C
-# - year: 1772
-#   name: 安永
-#   name_en: "Anei"
-#   name_en_: "An'ei"
-#   name_kana: あんえい
-#   uri: http://ja.wikipedia.org/wiki/%E5%AE%89%E6%B0%B8
-# - year: 1781
-#   name: 天明
-#   name_en: "Tenmei"
-#   name_en_: "Tenmei"
-#   name_kanてんめいa: 
-#   uri: http://ja.wikipedia.org/wiki/%E5%A4%A9%E6%98%8E
-# - year: 1789
-#   name: 寛政
-#   name_en: "Kansei"
-#   name_en_: "Kansei"
-#   name_kana: かんせい
-#   uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%94%BF
-# - year: 1801
-#   name: 享和
-#   name_en: "Kyowa"
-#   name_en_: "Kyōwa"
-#   name_kana: きょうわ
-#   uri: http://ja.wikipedia.org/wiki/%E4%BA%AB%E5%92%8C
+- year: 1615
+  name: 元和
+  name_en: "Genna"
+  name_en_: "Genna"
+  name_kana: げんな
+  uri: http://ja.wikipedia.org/wiki/%E5%85%83%E5%92%8C_(%E6%97%A5%E6%9C%AC)
+- year: 1624
+  name: 寛永
+  name_en: "Kanei"
+  name_en_: "Kan'ei"
+  name_kana: かんえい
+  uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%B0%B8
+- year: 1644
+  name: 正保
+  name_en: "Shoho"
+  name_en_: "Shōhō"
+  name_kana: しょうほう
+  uri: http://ja.wikipedia.org/wiki/%E6%AD%A3%E4%BF%9D
+- year: 1648
+  name: 慶安
+  name_en: "Keian"
+  name_en_: "Keian"
+  name_kana: けいあん
+  uri: http://ja.wikipedia.org/wiki/%E6%85%B6%E5%AE%89
+- year: 1652
+  name: 承応
+  name_en: "Joo"
+  name_en_: "Jōō"
+  name_kana: じょうおう
+  uri: http://ja.wikipedia.org/wiki/%E6%89%BF%E5%BF%9C
+- year: 1655
+  name: 明暦
+  name_en: "Meireki"
+  name_en_: "Meireki"
+  name_kana: めいれき
+  uri: http://ja.wikipedia.org/wiki/%E6%98%8E%E6%9A%A6
+- year: 1658
+  name: 万治
+  name_en: "Manji"
+  name_en_: "Manji"
+  name_kana: まんじ
+  uri: http://ja.wikipedia.org/wiki/%E4%B8%87%E6%B2%BB
+- year: 1661
+  name: 寛文
+  name_en: "Kanbun"
+  name_en_: "Kanbun"
+  name_kana: かんぶん
+  uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%96%87
+- year: 1673
+  name: 延宝
+  name_en: "Enpo"
+  name_en_: "Enpō"
+  name_kana: えんぽう
+  uri: http://ja.wikipedia.org/wiki/%E5%BB%B6%E5%AE%9D
+- year: 1681
+  name: 天和
+  name_en: "Tenna"
+  name_en_: "Tenna"
+  name_kana: てんな
+  uri: http://ja.wikipedia.org/wiki/%E5%A4%A9%E5%92%8C_(%E6%97%A5%E6%9C%AC)
+- year: 1684
+  name: 貞享
+  name_en: "Jokyo"
+  name_en_: "Jōkyō"
+  name_kana: じょうきょう
+  uri: http://ja.wikipedia.org/wiki/%E8%B2%9E%E4%BA%AB
+- year: 1688
+  name: 元禄
+  name_en: "Genroku"
+  name_en_: "Genroku"
+  name_kana: げんろく
+  uri: http://ja.wikipedia.org/wiki/%E5%85%83%E7%A6%84
+- year: 1704
+  name: 宝永
+  name_en: "Hoei"
+  name_en_: "Hōei"
+  name_kana: ほうえい
+  uri: http://ja.wikipedia.org/wiki/%E5%AE%9D%E6%B0%B8
+- year: 1711
+  name: 正徳
+  name_en: "Shotoku"
+  name_en_: "Shōtoku"
+  name_kana: しょうとく
+  uri: http://ja.wikipedia.org/wiki/%E6%AD%A3%E5%BE%B3_(%E6%97%A5%E6%9C%AC)
+- year: 1716
+  name: 享保
+  name_en: "Kyoho"
+  name_en_: "Kyōhō"
+  name_kana: きょうほう
+  uri: http://ja.wikipedia.org/wiki/%E4%BA%AB%E4%BF%9D
+- year: 1736
+  name: 元文
+  name_en: "Genbun"
+  name_en_: "Genbun"
+  name_kana: げんぶん
+  uri: http://ja.wikipedia.org/wiki/%E5%85%83%E6%96%87
+- year: 1741
+  name: 寛保
+  name_en: "Kanpo"
+  name_en_: "Kanpō"
+  name_kana: かんぽう
+  uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E4%BF%9D
+- year: 1744
+  name: 延享
+  name_en: "Enkyo"
+  name_en_: "Enkyō"
+  name_kana: えんきょう
+  uri: http://ja.wikipedia.org/wiki/%E5%BB%B6%E4%BA%AB
+- year: 1748
+  name: 寛延
+  name_en: "Kanen"
+  name_en_: "Kan'en"
+  name_kana: かんえん
+  uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E5%BB%B6
+- year: 1751
+  name: 宝暦
+  name_en: "Horeki"
+  name_en_: "Hōreki"
+  name_kana: ほうれき
+  uri: http://ja.wikipedia.org/wiki/%E5%AE%9D%E6%9A%A6
+- year: 1764
+  name: 明和
+  name_en: "Meiwa"
+  name_en_: "Meiwa"
+  name_kana: めいわ
+  uri: http://ja.wikipedia.org/wiki/%E6%98%8E%E5%92%8C
+- year: 1772
+  name: 安永
+  name_en: "Anei"
+  name_en_: "An'ei"
+  name_kana: あんえい
+  uri: http://ja.wikipedia.org/wiki/%E5%AE%89%E6%B0%B8
+- year: 1781
+  name: 天明
+  name_en: "Tenmei"
+  name_en_: "Tenmei"
+  name_kana: てんめい
+  uri: http://ja.wikipedia.org/wiki/%E5%A4%A9%E6%98%8E
+- year: 1789
+  name: 寛政
+  name_en: "Kansei"
+  name_en_: "Kansei"
+  name_kana: かんせい
+  uri: http://ja.wikipedia.org/wiki/%E5%AF%9B%E6%94%BF
+- year: 1801
+  name: 享和
+  name_en: "Kyowa"
+  name_en_: "Kyōwa"
+  name_kana: きょうわ
+  uri: http://ja.wikipedia.org/wiki/%E4%BA%AB%E5%92%8C
 - year: 1804
   name: 文化
   name_en: "Bunka"
@@ -170,7 +166,7 @@
   name: 天保
   name_en: "Tenpo"
   name_en_: "Tenpō"
-  name_kanてんぽうa: 
+  name_kana: てんぽう
   uri: http://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BF%9D
 - year: 1844
   name: 弘化
@@ -200,7 +196,7 @@
   name: 文久
   name_en: "Bunkyu"
   name_en_: "Bunkyū"
-  name_kanぶんきゅうa: 
+  name_kana: ぶんきゅう
   uri: http://ja.wikipedia.org/wiki/%E6%96%87%E4%B9%85
 - year: 1864
   name: 元治
